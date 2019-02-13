@@ -1,0 +1,64 @@
+.events-section::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/images/building-a-website.png');
+  background-size: cover;
+  z-index: 0;
+}
+
+.events-section__content {
+  z-index: 10;
+  color: $color-white;
+
+  .header__line {
+    background: $color-white;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 7rem;
+    font-family: $font-muli;
+    font-weight: 200;
+    margin-bottom: 2rem;
+
+    @include below(1100px){
+      font-size: 5rem;
+    }
+
+    @include below(600px){
+      font-size: 3rem;
+    }
+  }
+
+  @include below(600px){
+    padding: 0 4rem;
+  }
+}
+
+.events-section__text {
+  font-size: 3rem;
+  font-family: $font-playfair;
+  font-style: italic;
+
+  @include below(1100px){
+    font-size: 2rem;
+  }
+
+  @include below(600px){
+    font-size: 1.4rem;
+  }
+}
+
+.events-section__call {
+  padding-top: 30px;
+  text-align: center;
+
+  .button {
+    @include below(600px){
+      font-size: 1.2rem;
+    }
+  }
+}

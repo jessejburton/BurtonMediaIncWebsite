@@ -1,0 +1,72 @@
+.about-section {
+  background: $color-secondary;
+
+  @include below(700px){
+    padding: 7rem 0;
+    height: auto;
+  }
+
+  @include below(475px){
+    align-items: flex-start;
+  }
+}
+
+.about-section__content {
+  font-size: 2rem;
+  color: $color-secondary-font;
+  z-index: 10;
+  font-weight: 300;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
+
+  a,
+  a:link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: '';
+      left: 0;
+      top: 100%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: $color-white;
+      transition: all 0.4s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  h1 {
+    text-align: left;
+    width: 295px;
+    font-size: 7rem;
+    line-height: 1;
+    font-family: $font-playfair;
+
+    @include below(900px){
+      margin-top: 0;
+    }
+
+    @include below(700px){
+      font-size: 5rem;
+      width: 200px;
+    }
+  }
+
+  @include below(900px){
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include below(700px){
+    font-size: 1.8rem;
+  }
+
+}

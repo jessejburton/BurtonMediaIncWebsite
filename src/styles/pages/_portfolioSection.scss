@@ -1,0 +1,374 @@
+.portfolio-section {
+  padding-top: 50px;
+  min-height: 0;
+  height: auto;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.portfolio-item {
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  flex: 1 0 25%;
+  position: relative;
+  height: auto;
+  font-family: $font-opensans;
+  transition: all 0.3s ease;
+
+  @include below(900px) {
+    flex: 1 0 50%;
+  }
+
+  @include below(475px) {
+    flex: 1 0 100%;
+  }
+}
+
+.portfolio-item:hover:before {
+  background-color: rgba(0, 0, 0, 0.8);
+
+  // @include below(900px){
+  //   background-image: linear-gradient(rgba($color-black, 0),rgba($color-black, 0),rgba($color-black, .3), rgba($color-black, .9) );
+  // }
+}
+
+.portfolio-item:before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  @include below(900px) {
+    background-image: linear-gradient(
+      rgba($color-black, 0),
+      rgba($color-black, 0.1),
+      rgba($color-black, 0.3),
+      rgba($color-black, 0.9)
+    );
+  }
+}
+
+.portfolio-item:hover .portfolio-item__technologies,
+.portfolio-item:hover .portfolio-item__title {
+  opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-item__title {
+  transform: translate(-50%, -100%);
+
+  @include below(900px) {
+    transform: translateY(-50%);
+  }
+}
+.portfolio-item:hover .portfolio-item__technologies {
+  transform: translate(-50%, 50%);
+
+  @include below(900px) {
+    transform: translateY(-50%);
+  }
+}
+
+.portfolio-item__technologies,
+.portfolio-item__title {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 100%;
+  opacity: 0;
+
+  @include below(900px) {
+    opacity: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+.portfolio-item__hover {
+  @include below(900px) {
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    justify-content: flex-end;
+    display: flex;
+    align-items: flex-end;
+    flex-flow: column;
+  }
+}
+
+.portfolio-item__title {
+  color: $color-white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: $font-oswald;
+
+  @include below(660px) {
+    font-size: 1.6rem !important;
+  }
+
+  @include below(475px) {
+    font-size: 2rem !important;
+  }
+}
+
+.portfolio-item__technologies {
+  color: $color-secondary-font;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-family: $font-opensans;
+
+  @include below(660px) {
+    font-size: 1.2rem !important;
+  }
+
+  @include below(530px) {
+    font-size: 1rem !important;
+  }
+
+  @include below(475px) {
+    font-size: 1.8rem !important;
+  }
+}
+
+.portfolio-item:hover .portfolio-item__text {
+  opacity: 1;
+}
+
+.portfolio-item__title {
+  font-weight: bold;
+}
+
+.portfolio-item__technologies {
+  font-size: 1.4rem;
+}
+
+// Modal
+
+.portfolio-modal__container {
+  display: block;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 40% auto 7rem;
+
+  @include below(600px) {
+    grid-template-rows: 22rem auto 6rem;
+  }
+}
+
+.portfolio-modal__content {
+  position: relative;
+  overflow: hidden;
+
+  & > div {
+    position: absolute;
+    padding: 0 5rem;
+  }
+
+  @include below(900px) {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      background-color: darken($color-font, 20%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-font;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.portfolio-modal__scroll {
+  display: none; // until I can look at this
+
+  background-color: rgba(48, 48, 48, 0.521);
+  cursor: pointer;
+  height: 4rem;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 4000;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &--up {
+    top: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      @include arrow(rgba($color-font, 0.6));
+      transform: rotate(-135deg) translate(-50%, -50%);
+    }
+  }
+
+  &--down {
+    bottom: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include arrow(rgba($color-font, 0.6));
+      transform: rotate(45deg) translate(-50%, -50%);
+    }
+  }
+}
+
+.portfolio-modal__image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 50px -50px 100px 0 black inset;
+  transition: all 0.4s ease;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include below(600px) {
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+}
+
+.portfolio-modal__heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include below(600px) {
+    display: block;
+  }
+}
+
+.portfolio-modal__heading-text {
+  padding: 50px;
+
+  h1 {
+    color: $color-white;
+    font-size: 4rem;
+    margin: 0;
+
+    @include below(900px) {
+      font-size: 3rem;
+    }
+
+    @include below(600px) {
+      font-size: 3rem;
+    }
+  }
+
+  .portfolio-modal__technologies {
+    color: $color-secondary-font;
+    font-size: 1.8rem;
+
+    @include below(900px) {
+      font-size: 1.6rem;
+    }
+
+    @include below(700px) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.portfolio-modal__url {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a,
+  a:link {
+    color: $color-secondary-font;
+    font-weight: 600;
+    font-size: 1.8rem;
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: '';
+      left: 0;
+      top: 100%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: $color-secondary-font;
+      transition: all 0.4s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.portfolio-modal__close {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.ReactModalPortal > * {
+  // When the modal is closed, overlay div has no css class
+  // This selector should be overridden by the `&--after-open` class below
+  opacity: 0;
+}
+.ReactModal__Overlay {
+  transition: opacity 200ms ease-in-out;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 3000;
+  &--after-open {
+    opacity: 1;
+  }
+  &--before-close {
+    opacity: 0;
+  }
+}
+
+.ReactModal__Content {
+  &--after-open {
+    @include below(700px) {
+      top: 0 !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      right: 0 !important;
+    }
+  }
+}

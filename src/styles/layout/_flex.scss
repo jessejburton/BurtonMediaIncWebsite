@@ -1,0 +1,17 @@
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.split-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-flex {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}

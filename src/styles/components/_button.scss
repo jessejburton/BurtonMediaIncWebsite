@@ -1,0 +1,25 @@
+.button {
+  background: $color-primary;
+  border: none;
+  color: $color-primary-font;
+  display: inline-block;
+  font-size: $font-size-small;
+  font-weight: 300;
+  line-height: 1;
+  padding: $m-size;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.button:hover {
+  background-color: darken($color-primary, 20%);
+}
+
+.button--link {
+  background: none;
+}
+
+.button--secondary {
+  background: #888888;
+}

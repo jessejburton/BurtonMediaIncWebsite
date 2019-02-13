@@ -1,0 +1,15 @@
+.footer {
+  background-color: $color-secondary;
+  color: $color-secondary-font;
+  font-size: $font-size-small;
+  font-weight: 300;
+  padding: $s-size $l-size;
+
+  span {
+    font-weight: 700;
+  }
+
+  @include below(1050px){
+    text-align: center;
+  }
+}

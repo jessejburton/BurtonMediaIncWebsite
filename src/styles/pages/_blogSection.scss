@@ -1,0 +1,47 @@
+.blog-section {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url('/images/yoga-and-code.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: $color-white;
+  font-family: $font-opensans;
+
+  h1,
+  h2 {
+    font-family: $font-oswald;
+  }
+
+  h1 a,
+  h1 a:link {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.blog-section__content {
+  text-align: left;
+
+  a,
+  a:link {
+    color: $color-yellow;
+  }
+
+  @include below(900px){
+    max-width: 60rem;
+    padding: 0 4rem;
+  }
+
+  @include below(675px){
+    font-size: 1.6rem;
+  }
+
+  @include below(500px){
+    padding: 0 4rem;
+    font-size: 1.4rem;
+  }
+}
+
+.blog-section__posted-on {
+  font-size: 1.4rem;
+}

@@ -1,0 +1,71 @@
+.contact-section {
+  padding: 100px 0;
+  font-family: $font-opensans;
+
+  h2 {
+    font-family: $font-roboto;
+    font-weight: 200;
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+.contact-section__content {
+  width: 80rem;
+
+  @include below(900px) {
+    width: auto;
+    padding: 0 4rem;
+  }
+}
+
+.contact-section__form {
+  font-size: 1.6rem;
+}
+
+.contact-section__subtext {
+  margin: 10px 0 30px 0;
+
+  @include below(500px) {
+    font-size: 1.4rem;
+  }
+}
+
+.contact-section__social {
+  font-size: 2.5rem;
+
+  a,
+  a:link {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+    color: inherit;
+    display: inline-block;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:hover {
+      text-shadow: 3px 3px 16px #272634;
+      transform: scale(1.1);
+      color: $color-primary;
+    }
+  }
+}
+
+.contact-section__buttons {
+  @include below(530px) {
+    flex-direction: column;
+  }
+}
+
+.contact-section__social {
+  @include below(530px) {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
