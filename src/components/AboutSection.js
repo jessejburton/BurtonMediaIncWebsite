@@ -8,7 +8,7 @@ export const AboutSection = () => (
         <div>
           <h1>Jesse James Burton</h1>
           <p>
-            I'm a web developer with over 15 years of professional experience. I
+            I'm a web developer with over 12 years of professional experience. I
             spent the first 10 years of my career working in municipal
             government for the{' '}
             <a href="https://www.airdrie.ca">City of Airdrie</a> in Alberta,

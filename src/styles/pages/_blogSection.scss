@@ -10,6 +10,7 @@
   h1,
   h2 {
     font-family: $font-oswald;
+    text-transform: uppercase;
   }
 
   h1 a,
@@ -27,21 +28,22 @@
     color: $color-yellow;
   }
 
-  @include below(900px){
+  @include below(900px) {
     max-width: 60rem;
     padding: 0 4rem;
   }
 
-  @include below(675px){
+  @include below(675px) {
     font-size: 1.6rem;
   }
 
-  @include below(500px){
+  @include below(500px) {
     padding: 0 4rem;
     font-size: 1.4rem;
   }
 }
 
 .blog-section__posted-on {
+  text-transform: uppercase;
   font-size: 1.4rem;
 }

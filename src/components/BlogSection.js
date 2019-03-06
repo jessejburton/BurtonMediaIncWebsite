@@ -1,38 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
+import { getLatestPost } from '../helpers/Wordpress';
+import moment from 'moment';
 
-export const BlogSection = () => (
-  <section className="blog-section center-flex" id="blog">
-    <Fade right>
-      <div className="content-container blog-section__content">
-        <h1>
-          <a href="http://burtonmediainc.com/blog">YOGA & CODE</a>
-        </h1>
-        <h2>
-          <a
-            href="http://burtonmediainc.com/blog/my-mind-or-my-egos-scapegoat/"
-            target="_blank"
-          >
-            MY MIND? OR MY EGO’S SCAPEGOAT?
-          </a>
-        </h2>
-        <p>
-          Yesterday I skipped my practice for the first time in a couple of
-          weeks. I slept in and by the time I got up it was time for a phone
-          call that I had scheduled with a client{' '}
-          <a
-            href="http://burtonmediainc.com/blog/my-mind-or-my-egos-scapegoat/"
-            target="_blank"
-          >
-            more...
-          </a>
-        </p>
-        <p className="blog-section__posted-on">
-          POSTED ON JANUARY 30, 2019 BY JESSEJBURTON
-        </p>
-      </div>
-    </Fade>
-  </section>
-);
+export default class BlogSection extends Component {
+  constructor() {
+    super();
 
-export default BlogSection;
+    this.state = {
+      blogURL: 'http://burtonmediainc.com/blog',
+      blogTitle: 'YOGA & CODE',
+      postTitle: '',
+      postURL: '',
+      postExcerpt: '',
+      postDate: '',
+      postAuthor: ''
+    };
+  }
+
+  componentWillMount() {
+    const post = getLatestPost(this.state.blogURL).then((post) => {
+      this.setState(post);
+    });
+  }
+
+  render() {
+    return (
+      <section className="blog-section center-flex" id="blog">
+        <Fade right>
+          <div className="content-container blog-section__content">
+            <h1>
+              <a href={this.state.blogURL} target="_blank">
+                {this.state.blogTitle}
+              </a>
+            </h1>
+            <h2 className="blog-section__post-title">
+              <a href="{this.state.postURL}" target="_blank">
+                {this.state.postTitle}
+              </a>
+            </h2>
+            <p dangerouslySetInnerHTML={{ __html: this.state.postExcerpt }} />
+            <p className="blog-section__posted-on">
+              POSTED ON {moment(this.state.postDate).format('MMMM DD, YYYY')} BY{' '}
+              {this.state.postAuthor}
+            </p>
+          </div>
+        </Fade>
+      </section>
+    );
+  }
+}

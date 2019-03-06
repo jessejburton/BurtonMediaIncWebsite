@@ -139,7 +139,7 @@ const portfolioData = [
     url: '',
     image: 'mynet_small.png',
     styles: {
-      backgroundImage: "url('/images/mynet.jpg')"
+      backgroundImage: "url('/images/mynet.png')"
     }
   },
   {
