@@ -35,7 +35,7 @@ export default class BlogSection extends Component {
               </a>
             </h1>
             <h2 className="blog-section__post-title">
-              <a href="{this.state.postURL}" target="_blank">
+              <a href={this.state.postURL} target="_blank">
                 {this.state.postTitle}
               </a>
             </h2>
