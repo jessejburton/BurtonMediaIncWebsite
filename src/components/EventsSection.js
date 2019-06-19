@@ -9,7 +9,7 @@ export const EventsSection = () => (
         <div className="events-section__events">
           <h2>Upcoming Events</h2>
           <ul>
-            <li>There are no events scheduled at this time.</li>
+            <li><a href="https://events.burtonmediainc.com">Summer Solstice Celebration</a></li>
           </ul>
           <h2>Past Events</h2>
           <ul>

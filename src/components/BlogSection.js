@@ -8,7 +8,7 @@ export default class BlogSection extends Component {
     super();
 
     this.state = {
-      blogURL: 'http://burtonmediainc.com/blog',
+      blogURL: 'https://burtonmediainc.com/blog',
       blogTitle: 'YOGA & CODE',
       postTitle: '',
       postURL: '',

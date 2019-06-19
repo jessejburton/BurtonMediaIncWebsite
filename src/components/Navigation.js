@@ -49,18 +49,6 @@ export default class Navigation extends React.Component {
             <NavLink
               className="navigation__link"
               activeClassName="navigation__link--active"
-              to="#portfolio"
-              onClick={(e) => {
-                e.preventDefault();
-                this.toggleMenu();
-                scrollPageTo('portfolio');
-              }}
-            >
-              Portfolio
-            </NavLink>
-            <NavLink
-              className="navigation__link"
-              activeClassName="navigation__link--active"
               to="#about"
               onClick={(e) => {
                 e.preventDefault();
@@ -69,6 +57,18 @@ export default class Navigation extends React.Component {
               }}
             >
               About
+            </NavLink>
+            <NavLink
+              className="navigation__link"
+              activeClassName="navigation__link--active"
+              to="#portfolio"
+              onClick={(e) => {
+                e.preventDefault();
+                this.toggleMenu();
+                scrollPageTo('portfolio');
+              }}
+            >
+              Projects
             </NavLink>
             <NavLink
               className="navigation__link"

@@ -12,8 +12,8 @@ export default class HomePage extends React.Component {
     return (
       <div>
         <Header />
-        <PortfolioSection />
         <AboutSection />
+        <PortfolioSection />
         <BlogSection />
         <EventsSection />
         <ContactSection />

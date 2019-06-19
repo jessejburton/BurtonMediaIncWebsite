@@ -8,6 +8,7 @@ const portfolioData = [
     id: 1,
     title: 'Salt Spring Centre of Yoga',
     technologies: 'WordPress, AngularJS',
+    color: "#65989E",
     content: (
       <div>
         <p>
@@ -34,7 +35,7 @@ const portfolioData = [
       </div>
     ),
     url: 'https://www.saltspringcentre.com',
-    image: 'saltspringcentre_small.png',
+    image: 'saltspringcentre-card.png',
     styles: {
       backgroundImage: "url('/images/saltspringcentre.png')"
     }
@@ -43,6 +44,7 @@ const portfolioData = [
     id: 2,
     title: 'Toko-pa',
     technologies: 'WordPress, WooCommerce, LearnDash',
+    color: "#b3af9a",
     content: (
       <div>
         <p>
@@ -72,7 +74,7 @@ const portfolioData = [
       </div>
     ),
     url: 'https://www.toko-pa.com',
-    image: 'toko-pa_small.png',
+    image: 'tokopa-card.png',
     styles: {
       backgroundImage: "url('/images/toko-pa.png')"
     }
@@ -81,6 +83,7 @@ const portfolioData = [
     id: 3,
     title: 'The City of Airdrie',
     technologies: 'Coldfusion, Custom CMS, Residential Portal',
+    color: "#005595",
     content: (
       <div>
         <h3>Project Description</h3>
@@ -104,7 +107,7 @@ const portfolioData = [
       </div>
     ),
     url: 'https://www.airdrie.ca',
-    image: 'airdrie_small.png',
+    image: 'airdrie-card.png',
     styles: {
       backgroundImage: "url('/images/airdrie.jpg')"
     }
@@ -113,6 +116,7 @@ const portfolioData = [
     id: 4,
     title: 'MyNet',
     technologies: 'Coldfusion, Custom Corporate Intranet',
+    color: '#21a1b3',
     content: (
       <div>
         <h3>Project Description:</h3>
@@ -137,7 +141,7 @@ const portfolioData = [
       </div>
     ),
     url: '',
-    image: 'mynet_small.png',
+    image: 'mynet-card.png',
     styles: {
       backgroundImage: "url('/images/mynet.png')"
     }
@@ -146,6 +150,7 @@ const portfolioData = [
     id: 5,
     title: 'Online Census',
     technologies: 'Coldfusion, MS SQL Server, Mobile Data Collection',
+    color: "#91BC39",
     content: (
       <div>
         <h3>Project Description:</h3>
@@ -167,7 +172,7 @@ const portfolioData = [
       </div>
     ),
     url: 'http://www.onlinecensus.ca',
-    image: 'census.jpg',
+    image: 'census-card.png',
     styles: {
       backgroundImage: "url('/images/census.jpg')"
     }
@@ -176,6 +181,7 @@ const portfolioData = [
     id: 6,
     title: 'BURTONMEDIA',
     technologies: 'React, Webpack, Babel, SASS',
+    color: "#ffffff",
     content: (
       <div>
         <h3>Project Description:</h3>
@@ -201,62 +207,64 @@ const portfolioData = [
       </div>
     ),
     url: 'https://www.burtonmediainc.com',
-    image: 'burtonmedia_small.png',
+    image: 'burtonmedia-card.png',
     styles: {
       backgroundImage: "url('/images/burtonmedia.png')"
     }
   },
-    {
-      id: 7,
-      title: 'Airdrie Curling Club',
-      technologies: 'WordPress, Custom Plugin Development',
-      content: (
-        <div>
-          <h3>Project Description:</h3>
+  {
+    id: 7,
+    title: 'Airdrie Curling Club',
+    technologies: 'WordPress, Custom Plugin Development',
+    color: "#337AB7",
+    content: (
+      <div>
+        <h3>Project Description:</h3>
 
-          <p>The Airdrie Curling Club needed a new website. We implemented a simple WordPress theme and customized it to meet the needs of the club.</p>
+        <p>The Airdrie Curling Club needed a new website. We implemented a simple WordPress theme and customized it to meet the needs of the club.</p>
 
-          <p>I built a custom plugin that allows them to easily update their weekly league schedules and standings.</p>
+        <p>I built a custom plugin that allows them to easily update their weekly league schedules and standings.</p>
 
-          <h4>Key Features:</h4>
-          <ul>
-            <li>WordPress website setup and implementation</li>
-            <li>Theme Customizations</li>
-            <li>Custom Plugin Deveopment</li>
-          </ul>
-        </div>
-      ),
-      url: 'https://www.airdriecurlingclub.ca',
-      image: 'acc_small.png',
-      styles: {
-        backgroundImage: "url('/images/acc.png')"
-      }
-    },
-      {
-        id: 8,
-        title: 'Accredited Supports to the Community',
-        technologies: 'WordPress',
-        content: (
-          <div>
-            <h3>Project Description:</h3>
+        <h4>Key Features:</h4>
+        <ul>
+          <li>WordPress website setup and implementation</li>
+          <li>Theme Customizations</li>
+          <li>Custom Plugin Deveopment</li>
+        </ul>
+      </div>
+    ),
+    url: 'https://www.airdriecurlingclub.ca',
+    image: 'airdriecc-card.png',
+    styles: {
+      backgroundImage: "url('/images/acc.png')"
+    }
+  },
+  {
+    id: 8,
+    title: 'Accredited Supports to the Community',
+    technologies: 'WordPress',
+    color: "#630053",
+    content: (
+      <div>
+        <h3>Project Description:</h3>
 
-            <p>The Accredited Supports to the Community needed a new website, being a non-profit support agency they needed it done as affordable as possible. We implemented a simple WordPress site for them.</p>
+        <p>The Accredited Supports to the Community needed a new website, being a non-profit support agency they needed it done as affordable as possible. We implemented a simple WordPress site for them.</p>
 
-            <p>The support workers needed a way to access documents and forms while visiting clients. The office administrators needed an easy way of managing those documents and getting them to the support staff. We implemented a private, password protected area within the site where the admins could upload documents and the support staff could access them from wherever they needed via their phones, tablets or laptops.</p>
+        <p>The support workers needed a way to access documents and forms while visiting clients. The office administrators needed an easy way of managing those documents and getting them to the support staff. We implemented a private, password protected area within the site where the admins could upload documents and the support staff could access them from wherever they needed via their phones, tablets or laptops.</p>
 
-            <h4>Key Features:</h4>
-            <ul>
-              <li>WordPress website setup and implementation</li>
-              <li>Password protected document management</li>
-              <li>Custom user roles</li>
-            </ul>
-          </div>
-        ),
-        url: 'http://asc-mva.ab.ca',
-        image: 'asc_small.png',
-        styles: {
-          backgroundImage: "url('/images/asc.jpg')"
-        }
+        <h4>Key Features:</h4>
+        <ul>
+          <li>WordPress website setup and implementation</li>
+          <li>Password protected document management</li>
+          <li>Custom user roles</li>
+        </ul>
+      </div>
+    ),
+    url: 'http://asc-mva.ab.ca',
+    image: 'asc-card.png',
+    styles: {
+      backgroundImage: "url('/images/asc.jpg')"
+    }
   }
 ];
 
@@ -297,16 +305,19 @@ export default class ContactSection extends React.Component {
 
   render() {
     return (
-      <section className="portfolio-section column-flex" id="portfolio">
-        {portfolioData.map((item) => {
-          return (
-            <PortfolioItem
-              {...item}
-              handleOpenItem={this.showPortfolioItem}
-              key={item.id}
-            />
-          );
-        })}
+      <section className="portfolio-section" id="portfolio">
+        <h1>Projects</h1>
+        <div className="portfolio-items">
+          {portfolioData.map((item) => {
+            return (
+              <PortfolioItem
+                {...item}
+                handleOpenItem={this.showPortfolioItem}
+                key={item.id}
+              />
+            );
+          })}
+        </div>
 
         <Modal
           isOpen={this.state.showModal}
@@ -315,10 +326,10 @@ export default class ContactSection extends React.Component {
           closeTimeoutMS={500}
           style={{
             overlay: {
-              backgroundColor: 'rgba(0,0,0,.7)'
+              backgroundColor: 'rgba(255,255,255)'
             },
             content: {
-              backgroundColor: 'rgb(0,0,0)',
+              backgroundColor: 'rgb(255,255,255)',
               color: '#8a8a8a',
               border: 'none',
               borderRadius: 0,
