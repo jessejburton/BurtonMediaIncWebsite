@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  /* COLORS */
+  --black: #231F20;
+  --white: #F5F8FF;
+  --grey-1: #e9e9e9;
+  --grey-2: #cacace;
+  --grey-3: #9d9da2;
+  --blue-1: #73b7df;
+  --blue-2: #3E7CB1;
+  --blue-3: #305169;
+  --red-1: #e98f83;
+  --red-2: #BB4430;
+  --red-3: #81382e;
+  --yellow-1: #fddba2;
+  --yellow-2: #F4AC45;
+  --yellow-3: #e1a033;
+  --purple-1: #d9a6ff;
+  --purple-2: #9146FF;
+  --purple-3: #4a00e6;
+
+  /* COLORS BY USE */
+  --background: var(--white);
+  --primary: var(--blue-2);
+  --primaryDark: var(--blue-3);
+  --fontColor: var(--black);
+  --twitchPurple: var(--purple-2);
+  --linkHoverLineColor: var(--fontColor);
+
+  /* FONT SIZES */
+  --font-size-0: 0.8em;
+  --font-size-1: 1em;
+  --font-size-2: 1.25em;
+  --font-size-3: 1.563em;
+  --font-size-4: 1.953em;
+  --font-size-5: 2.441em;
+  --font-size-6: 3.052em;
+
+  /* SPACE */
+  --space-1: 1rem;
+  --space-2: 1.5rem;
+  --space-3: 2rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+
+  /* Shadows */
+  --height-1:	0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --height-2:	0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --height-3:	0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --height-4:	0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --height-5:	0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Cards */
+  --cardBorderRadius: 25px;
+
+  /* Buttons */
+  --buttonBackgroundColor: var(--primary);
+  --buttonColor: var(--white);
+  --buttonBackgroundColorHover: var(--primaryDark);
+  --buttonColorHover: var(--white);
+  --buttonBorderRadius: 2px;
+}
+
+html {
+  font-size: 100%;/*16px*/
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--black);
+  letter-spacing: 0.5px;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin button {
+  border: 0;
+  padding: 0.75em 1.25em;
+  background-color: var(--buttonBackgroundColor);
+  color: var(--buttonColor);
+  transition: background-color .3s ease, color .3s ease;
+  border-radius: var(--buttonBorderRadius);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--buttonBackgroundColorHover);
+    color: var(--buttonColorHover);
+  }
+}
+
+@mixin link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--linkHoverLineColor);
+    transition: height .3s ease, opacity .3s ease, transform .3s ease;
+    left: 0;
+    bottom: 0;
+  }
+
+  &:hover::after {
+    height: 4px;
+    opacity: 0.8;
+  }
+}
+
+button {
+  @include button;
+}
+
+main {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+p {margin-bottom: 1.15rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--primary);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--font-size-6);
+}
+
+h2 {font-size: var(--font-size-5);}
+
+h3 {font-size: var(--font-size-4);}
+
+h4 {font-size: var(--font-size-3);}
+
+h5 {font-size: var(--font-size-2);}
+
+small, .text_small {font-size: var(--font-size-0);}
+
+/* HERO SECTION */
+section[name=hero] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+
+  h1 {
+    font-weight: 100;
+    letter-spacing: 0.3em;
+    position: relative;
+    padding-left: 0.25em;
+    padding-bottom: 0.25em;
+    transform: translateY(100px);
+    opacity: 0;
+    filter: blur(5px);
+    z-index: 100;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  h2 {
+    letter-spacing: 0.35em;
+    margin: 0;
+    padding: 1.5em 1em 0 1em;
+    font-size: var(--font-size-2);
+    background-color: var(--background);
+    color: var(--background);
+    border-top: 2px solid var(--blue-1);
+    left: 50%;
+    height: 3em;
+    z-index: 200;
+    width: 0;
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  .social {
+    font-size: 1.6em;
+    margin-top: var(--space-4);
+
+    a {
+      color: var(--primary);
+      opacity: 0;
+      transform: translateY(20px);
+      display: inline-block;
+      position: relative;
+
+      & + a {
+        margin-left: 0.25em;
+      }
+    }
+  }
+}
+
+section[name=twitch]{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--twitchPurple);
+  color: var(--white);
+
+  & > div:first-child {
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    padding: var(--space-4);
+  }
+
+  .branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin-right: var(--space-5);
+
+    #twitch-icon {
+      width: 70px;
+      margin-bottom: var(--space-2);
+    }
+    #twitch-text {
+      max-width: 300px;
+    }
+
+    h3 {
+      color: inherit;
+      font-size: 1.4em;
+      text-align: center;
+    }
+  }
+
+  .schedule {
+    background-color: var(--white);
+    max-width: 550px;
+    width: 100%;
+    border-radius: var(--cardBorderRadius);
+    box-shadow: var(--height-5);
+    overflow: hidden;
+
+    .schedule__image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: url('../images/streamshot.png') no-repeat;
+      background-size: 100%;
+      background-position: bottom;
+    }
+
+    .schedule__item {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      color: var(--fontColor);
+      margin: var(--space-2);
+
+      .schedule__time {
+        margin-top: 2em;
+        text-align: right;
+
+        span {
+          font-weight: 900;
+        }
+
+        button {
+          margin-top: 1em;
+        }
+
+      }
+
+      h4, h5 {
+        margin: 0.2em 0;
+      }
+
+      h4 {
+        color: var(--twitchPurple);
+        font-size: 1.2em;
+        font-weight: 900;
+      }
+
+      h5 {
+        color: inherit;
+        font-size: 1em;
+        font-weight: 700;
+      }
+
+      button {
+        --buttonBackgroundColor: var(--twitchPurple);
+        --buttonBackgroundColorHover: var(--purple-3);
+        font-weight: 500;
+      }
+    }
+
+    &__details {
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+
+      h2,h3 {
+        color: var(--white);
+        margin: 0;
+      }
+
+      p {
+        max-width: 60ch;
+      }
+
+      a {
+        --linkHoverLineColor: var(--white);
+        @include link;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        max-width: 60vw;
+
+        button {
+          background-color: var(--white);
+          color: var(--twitchPurple);
+          font-weight: 500;
+
+          &:hover {
+            background-color: var(--purple-3);
+            color: var(--white);
+          }
+        }
+
+        .monday {
+          text-align: center;
+          padding-right: var(--space-5);
+          color: var(--white);
+
+          span {
+            font-size: 6em;
+          }
+        }
+
+        .wednesday {
+          text-align: center;
+          padding-left: var(--space-5);
+          display: flex;
+          flex-direction: column;
+
+          span {
+            display: block;
+            height: 96px;
+            width: 96px;
+            background: url('../images/jesse-color-run.png');
+            animation: avatarAnimate 1s steps(8) infinite;
+            transform: scale(1.25) translate3d(18px, 30px, 0);
+          }
+        }
+
+        .monday strong,
+        .wednesday strong {
+          font-size: 1.6em;
+          display: block;
+
+          small {
+            font-size: 0.6em;
+          }
+        }
+      }
+
+    }
+  }
+
+  a.button--twitch {
+    @include button
+    background-color: var(--white);
+    color: var(--twitchPurple);
+    padding: 1em 1.25em;
+    margin-top: 1.5em;
+    border-radius: var(--cardBorderRadius);
+    box-shadow: var(--height-2);
+    text-decoration: none;
+    transition: transform .5s ease,
+                box-shadow .5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: var(--height-4);
+      background-color: var(--white);
+      color: var(--twitchPurple);
+    }
+  }
+}
+
+section[name=signup]{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100vw;
+  position: relative;
+  color: var(--background);
+  overflow: visible;
+  background-color: var(--primary);
+
+  h2 {
+    color: inherit;
+    margin-top: 0;
+  }
+}
+
+footer {
+  width: 100%;
+  padding: var(--space-5);
+  background-color: var(--black);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 50px;
+  color: var(--white);
+
+  > div {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  h3, h4, a {
+    color: var(--white);
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+
+  .social a + a {
+        margin-left: 0.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      transition: color 0.3s ease;
+      display: inline-block;
+      position: relative;
+      font-size: 1.1em;
+    }
+
+    a:hover {
+      color: var(--primary);
+    }
+  }
+
+  h4 {
+    font-size: 1.6em;
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 0.5em;
+    margin-bottom: 0;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar {
+    display: block;
+    position: relative;
+    width: calc(768px / 8);
+    height: 96px;
+    background: url('../images/jesse-outline-blink.png');
+    animation: avatarAnimate 3s steps(8) infinite;
+    transition: transform .3s ease;
+  }
+
+  .avatar.outline.blink {
+    background: url('../images/jesse-outline-blink.png');
+    animation: avatarAnimate 3s steps(8) infinite;
+  }
+
+  .avatar.color.blink {
+    background: url('../images/jesse-color-blink.png');
+    animation: avatarAnimate 3s steps(8) infinite;
+  }
+
+  .avatar.color.idle {
+    background: url('../images/jesse-color-idle.png');
+    animation: avatarAnimate 2s steps(8) infinite;
+  }
+
+  .avatar.color.run {
+    background: url('../images/jesse-color-run.png');;
+    animation: avatarAnimate 1s steps(8) infinite;
+  }
+
+  .avatar.color.sit {
+    background: url('../images/jesse-color-sit.png') no-repeat;
+    animation: avatarAnimateOnce 2s steps(7) forwards;
+  }
+
+  @media screen and (max-width: 1100px) {
+    font-size: 0.8em;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    padding: 50px 0;
+  }
+}
+
+@keyframes avatarAnimate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -768px
+  }
+}
+
+@keyframes avatarAnimateOnce {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -672px
+  }
+}
+
